@@ -7,4 +7,9 @@ describe Ticket do
       expect(ticket.price).to be > 0
     end
   end
+  describe "has the behaviour" do
+    it "to change its price" do
+      expect{ ticket.change_price_to(20) }.to change{ ticket.price }.to(20)
+    end
+  end
 end
