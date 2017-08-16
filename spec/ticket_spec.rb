@@ -11,5 +11,8 @@ describe Ticket do
     it "to change its price" do
       expect{ ticket.change_price_to(20) }.to change{ ticket.price }.to(20)
     end
+    it "to output price in dollars" do
+      expect{ ticket.view_price }.to output("$10\n").to_stdout
+    end
   end
 end
