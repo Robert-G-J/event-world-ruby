@@ -25,3 +25,18 @@ size?
 Please Input Coordinates: > 4,2
 Closest Events to (4,2):
 Event 003 - $30.29, Distance 3 Event 001 - $35.20, Distance 5 Event 006 - $01.40, Distance 12
+
+## User Stories
+```
+As a user
+I want to see events near me
+So that I can enjoy free time
+
+As a user
+I want to know the cost of those events
+So that I can choose which I can afford
+
+As a user
+I want to know the distance to an event
+So that I can make a decision based on that distance
+```
