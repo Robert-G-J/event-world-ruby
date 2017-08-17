@@ -1,5 +1,3 @@
-require 'ticket'
-
 describe Ticket do
   subject(:ticket) { described_class.new(10) }
   describe "has the attribute" do
