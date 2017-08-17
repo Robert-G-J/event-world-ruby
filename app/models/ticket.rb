@@ -1,4 +1,9 @@
 class Ticket
+  include DataMapper::Resource
+
+  property :id,      Serial
+  property :price,   Decimal
+
 
   attr_reader :price
 

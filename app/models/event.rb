@@ -1,14 +1,6 @@
 class Event
-  @@id = 0
+  include DataMapper::Resource
 
-  attr_reader :id
-
-  def initialize
-    @id = @@id
-    @@id += 1
-  end
-
-  private
-  attr_writer :id
+  property :id,   Serial
 
 end
