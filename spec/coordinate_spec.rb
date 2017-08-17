@@ -6,7 +6,10 @@ describe Coordinate do
   it "instantiates with an integer x co-ordinate" do
     expect(coord.x).to equal(0)
   end
-  it "instantiateswith an integer y co-ordinate" do
+  it "instantiates with an integer y co-ordinate" do
     expect(coord.y).to equal(1)
+  end
+  it "has a combined coordinate" do
+    expect(coord.position).to eq([0,1])
   end
 end
