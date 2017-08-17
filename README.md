@@ -40,3 +40,6 @@ As a user
 I want to know the distance to an event
 So that I can make a decision based on that distance
 ```
+## Assumptions
+
+- Coordinates are expressed as integers, not floats
