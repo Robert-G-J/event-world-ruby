@@ -7,7 +7,7 @@ class Grid
     @area = {}
   end
 
-  def generate_empty(x_min, x_max, y_min, y_max)
+  def generate_empty(x_min = -1, x_max = 1, y_min = -1, y_max = 1)
     (x_min..x_max).each do |x|
       (y_min..y_max).each do |y|
         @area[[x, y]] = nil
