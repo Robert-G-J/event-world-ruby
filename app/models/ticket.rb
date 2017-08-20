@@ -1,3 +1,4 @@
+# Tickets belong to Events in a many-to-one association.
 class Ticket
   include DataMapper::Resource
 
