@@ -1,6 +1,8 @@
 # This allows a grid object to create a hash of coordinates as keys with nil values
 class Grid
 
+  attr_reader :area
+
   def initialize
     @area = {}
   end
@@ -13,4 +15,15 @@ class Grid
     end
     @area
   end
+
+  def assign_event(x, y, event)
+    self.area[[x,y]] = event
+  end
+
+  def man_distance(point_a, point_b)
+    (point_a.first - point_b.first).abs + (point_a.last - point_b.last).abs
+  end
+
+  private
+  attr_writer :area
 end
