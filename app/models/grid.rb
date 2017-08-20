@@ -21,6 +21,7 @@ class Grid
   end
 
   def man_distance(point_a, point_b)
+    raise "Invalid Coordinates" if (!point_a.is_a? Array) || (!point_b.is_a? Array)
     (point_a.first - point_b.first).abs + (point_a.last - point_b.last).abs
   end
 
