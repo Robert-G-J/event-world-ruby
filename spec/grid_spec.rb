@@ -13,7 +13,7 @@ describe Grid do
   end
 
   it 'can assign an event' do
-    grid.assign_event(1, 1, event_a )
+    grid.assign_to_coordinate(1, 1, event_a )
     expect(grid.area[[1,1]]).to eq(event_a)
   end
 
@@ -21,8 +21,8 @@ describe Grid do
     point_a = [-1, -1]
     point_b = [0, 0]
     grid.generate_empty
-    grid.assign_event(-1, -1, event_a)
-    grid.assign_event(0, 0, event_b)
+    grid.assign_to_coordinate(-1, -1, event_a)
+    grid.assign_to_coordinate(0, 0, event_b)
     expect(grid.man_distance(point_a, point_b)).to eq(2)
   end
 

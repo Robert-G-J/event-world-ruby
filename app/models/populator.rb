@@ -1,5 +1,5 @@
 # To randomly populate a grid with events
-class Populator
+class GridPopulator
 
   def prepare(preparer)
       preparer.prepare(self)
