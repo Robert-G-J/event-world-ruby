@@ -1,6 +1,7 @@
+require './app/modules/random.rb'
+
 describe Grid do
   subject(:grid) { described_class.new(-1, 1, -1, 1) }
-  let(:grid_a) { spy("grid_a") }
   let(:event_a) { double(:event) }
   let(:event_b) { double(:event) }
 
@@ -34,5 +35,30 @@ describe Grid do
     it 'if two integers given to #man_distance' do
       expect { grid.man_distance(2, 3) }.to raise_error("Invalid Coordinates")
     end
+  end
+
+  describe 'Random Module' do
+    subject(:grid) { described_class.new }
+
+    before(:each) do
+      grid.extend(GridRandom)
+    end
+
+    it 'generates random x value' do
+      allow(grid).to receive(:rand) { 1 }
+      expect(grid.random_x).to eq(1)
+    end
+    
+    it 'generates random y value' do
+      allow(grid).to receive(:rand) { 1 }
+      expect(grid.random_y).to eq(1)
+    end
+
+    it 'generates random number from 0 to product of range' do
+      allow(grid).to receive(:rand) { 1 }
+      expect(grid.random_range_product).to eq(1)
+    end
+
+
   end
 end
