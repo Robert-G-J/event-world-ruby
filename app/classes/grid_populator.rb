@@ -12,6 +12,9 @@ class GridPopulator
   end
 
   def add_events(grid)
-  end
+  	grid.random_range_product.times do
+  		grid.assign_to_coordinate(grid.random_x, grid.random_y, Event.create)
+  	end
+  end	
 
 end
