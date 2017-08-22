@@ -1,4 +1,6 @@
 # This allows a grid object to create a hash of coordinates as keys with nil values
+require './app/modules/random.rb'
+
 class Grid
 
   attr_reader :area, :x_min, :x_max, :y_min, :y_max
