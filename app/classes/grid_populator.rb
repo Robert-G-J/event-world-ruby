@@ -11,4 +11,7 @@ class GridPopulator
   	add_events(grid)
   end
 
+  def add_events(grid)
+  end
+
 end
