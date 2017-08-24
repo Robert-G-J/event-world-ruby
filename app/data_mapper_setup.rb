@@ -3,7 +3,6 @@ require 'dm-postgres-adapter'
 
 require_relative './models/event'
 require_relative './models/ticket'
-require_relative './models/coordinate'
 require_relative './classes/grid'
 require_relative './classes/grid_populator'
 require_relative './classes/event_populator'
