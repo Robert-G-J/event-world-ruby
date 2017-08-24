@@ -41,7 +41,7 @@ To query for the events closest to a coordinate:
 > world.list_closest_events([1, 1])
 ```
 ## Honesty Up Front
-I ran out of time after a solid innings. I have not met the specification, after I hit a roadblock trying to accurately implement the logic required for returning the list of events by Manhattan distance with cheapest ticket.
+I ran out of time after a solid innings. I have not met the specification entirely, as there is not yet a small UI (even for the REPL) that requests coordinates.
 [Here's what I'd improve and do differently](#improvements)
 
 ## Approach
@@ -78,12 +78,12 @@ I feel that in seeking to make the classes truly have a single responsibilty wit
 I would consider instead giving the Grid and Event classes class-methods to handle generating random seed data.
 I clearly want to crack the current dilemna of bringing together the event, tickets and location data to render the closest events with ticket prices.
 
-## How might you change your program if you needed to support multiple events at the
-same location?
+## How might you change your program if you needed to support multiple events at the same location?
+
 I can change the Grid to generate empty arrays against each coordinate key. Events can be concatenated into these by the GridPopulator,
 
-## How would you change your program if you were working with a much larger world
-size?
+## How would you change your program if you were working with a much larger world size?
+
 I carefully considered this before building. The Grid class takes arguments at initialisation to define its range, which makes it simpler to assign.
 With regard to search efficiency, I would apply a Big-O analysis of the current search methods and refactor to remove any non-linear code.
 I have connected and setup a postgres database with DataMapper as an ORM to show that the existing format can be easily extended.
