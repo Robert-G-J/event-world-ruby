@@ -1,6 +1,6 @@
 # Viagogo Coding Challenge- 'Event-World-Ruby'
 
-This solution has been written in Ruby, prepared for extension with a Postgres database and placed within a Sinatra framework with Rack to serve.
+This solution has been written in Ruby, prepared for extension with a Postgres database and placed within a modular Sinatra framework, with Rake to allow command line database migrations.
 
 ## Installation
 
@@ -11,7 +11,7 @@ $ git clone https://github.com/Robert-G-J/event-world-ruby.git
 
 2. Navigate to the repository:
 ```
-$ cd path/to/repo 
+$ cd path/to/repo
 ```
 
 3. Install dependencies and run tests:
@@ -24,7 +24,7 @@ See how the world works so far. Choose a REPL:
 ```
 $ pry (or irb)
 ```
-Require the app file and 
+Require the app file and
 ```
 > require './app/app.rb'
 > world = World.new
@@ -42,24 +42,24 @@ To query for the events closest to a coordinate:
 ```
 ## Honesty Up Front
 I ran out of time after a solid innings. I have not met the specification, after I hit a roadblock trying to accurately implement the logic required for returning the list of events by Manhattan distance with cheapest ticket.
-[Here's what I'd improve and do differently](#Improvements)
+[Here's what I'd improve and do differently](#improvements)
 
 ## Approach
 1. Create classes for Grid, Event and Ticket.
 These have been written to be as reusable and uncoupled as possible.
 
-2. Associations: a Grid has Events, Events have Tickets. 
+2. Associations: a Grid has Events, Events have Tickets.
 By observing the Single Responsibility Principle, I did not want Events to be able to generate Tickets, or Grids to populate with events.
 
 3. Grid and GridRandom module: I wanted to generate reasonable random values within the x, y boundaries of the Grid. I felt that having these methods to generate random values on the Grid in the class blurred its purpose. They are extracted to the module GridRandom so that they can be used to extend the class if required.
 
 3a. Storing Events in Grid: Events are stored in a hash with a coordinate array as key and the event object as value.
 
-4. Populators: Where Grids, Events and Tickets have the means to be populated, the 'populator' classes are introduced specificially to populate them. This ensures that the objects are extensible, reuseable and reduces 
+4. Populators: Where Grids, Events and Tickets have the means to be populated, the 'populator' classes are introduced specificially to populate them. This ensures that the objects are extensible, reuseable and reduces
 
 5. World: The World Class is designed to be the container to house the other classes and have the higher-level methods that interact with the other classes to populate it.
 
-6. Populator logic: The GridPopulator and EventPopulator classes are 'duck' types, which are entrusted by World to prepare a populated Grid and Events with Tickets. 
+6. Populator logic: The GridPopulator and EventPopulator classes are 'duck' types, which are entrusted by World to prepare a populated Grid and Events with Tickets.
 
 7. Listing events by Manhattan Distance and cheapest ticket:
 World handles this, currently unsuccessfully. More information below.
@@ -72,7 +72,7 @@ World handles this, currently unsuccessfully. More information below.
 3. Prefer London-style testing
 4. Use Rubocop as a style guide
 
-## Improvements
+## <a name="improvements">Improvements</a>
 
 I feel that in seeking to make the classes truly have a single responsibilty with little coupling, I have inadvertently overcomplicated my solution.
 I would consider instead giving the Grid and Event classes class-methods to handle generating random seed data.
@@ -108,7 +108,7 @@ So that I can make a decision based on that distance
 - The Manhattan distance is the absolute difference of two coordinates
 - There are up to ten Events per grid
 - There are up to ten tickets per event
-- Tickets are between $30-$50. 
+- Tickets are between $30-$50.
 
 ### Technologies
 Currently:
