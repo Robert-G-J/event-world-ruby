@@ -3,7 +3,7 @@ class Event
 
   @@id = 1
 
-  attr_reader :id, :tickets
+  attr_reader :id, :tickets, :location
 
   def initialize
   	@tickets = []

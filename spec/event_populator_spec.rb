@@ -1,9 +1,10 @@
 describe EventPopulator do
 	subject(:event_populator) { described_class.new }
   let(:grid) { double(:grid, :random_range_product => 1, :random_x => 1, :random_y => 1) }
-  let(:world) { double(:world, :grids => [grid]) }
   let(:ticket) { double(:ticket) }
   let(:event) { double(:event, :generate_tickets => true, :add_tickets => [ticket] ) }
+  let(:world) { double(:world, :grids => [grid], :events => [event] ) }
+
 
 	it { is_expected.to respond_to :prepare_world }
 	it { is_expected.to respond_to :create_events }
@@ -17,7 +18,7 @@ describe EventPopulator do
   describe '#create_events' do
     it 'pushes events to memory ' do
       expect(event_populator.events).to receive(:push).at_least(:once)
-      event_populator.create_events
+      event_populator.create_events(world)
     end
   end
   

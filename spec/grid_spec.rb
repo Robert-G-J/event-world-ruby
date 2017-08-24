@@ -1,5 +1,3 @@
-require './app/modules/random.rb'
-
 describe Grid do
   subject(:grid) { described_class.new(-1, 1, -1, 1) }
   let(:event_a) { double(:event) }
@@ -24,16 +22,16 @@ describe Grid do
     grid.generate_empty
     grid.assign_to_coordinate(-1, -1, event_a)
     grid.assign_to_coordinate(0, 0, event_b)
-    expect(grid.man_distance(point_a, point_b)).to eq(2)
+    expect(grid.taxi_distance(point_a, point_b)).to eq(2)
   end
 
   describe 'throws exception' do
     it 'if single integer given to #man_distance' do
-      expect { grid.man_distance(2, [1,1]) }.to raise_error("Invalid Coordinates")
+      expect { grid.taxi_distance(2, [1,1]) }.to raise_error("Invalid Coordinates")
     end
 
     it 'if two integers given to #man_distance' do
-      expect { grid.man_distance(2, 3) }.to raise_error("Invalid Coordinates")
+      expect { grid.taxi_distance(2, 3) }.to raise_error("Invalid Coordinates")
     end
   end
 

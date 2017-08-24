@@ -1,19 +1,21 @@
 # To randomly populate a grid with events
 class GridPopulator
 
+	attr_reader :events
+
   def prepare_world(world)
-  	world.grids.each { |grid|
-  		prepare_grid(grid)
-  	}
+  		add_events(world.grid, world)
   end
 
-  def prepare_grid(grid)
-  	add_events(grid)
+  def prepare_grid(grid, world)
+  	add_events(grid, world)
   end
 
-  def add_events(grid)
+ 	def add_events(grid, world)
   	grid.random_range_product.times do
-  		grid.assign_to_coordinate(grid.random_x, grid.random_y, Event.create)
+  		world.events.each do |event|
+  			grid.assign_to_coordinate(grid.random_x, grid.random_y, event)
+  		end
   	end
   end	
 

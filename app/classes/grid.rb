@@ -28,7 +28,7 @@ class Grid
     self.area[[x,y]] = object
   end
 
-  def man_distance(start_point, end_point)
+  def taxi_distance(start_point, end_point)
     raise "Invalid Coordinates" if (!start_point.is_a? Array) || (!end_point.is_a? Array)
     (start_point.first - end_point.first).abs + (start_point.last - end_point.last).abs
   end

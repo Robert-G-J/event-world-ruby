@@ -5,6 +5,7 @@ describe Event do
 
   describe 'has attributes of' do
     it { is_expected.to respond_to :id }
+    it { is_expected.to respond_to :location}
   end
 
   describe 'has behaviours' do
