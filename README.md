@@ -71,6 +71,7 @@ World handles this, currently unsuccessfully. More information below.
 2. Commit Messages: Commits are written in the present tense and have a further passage to justify/explain any changes.
 3. Prefer London-style testing
 4. Use Rubocop as a style guide
+5. Code-Coverage: use Simplecov CLI to monitor and improve code coverage. Coverage 99%+.
 
 ## <a name="improvements">Improvements</a>
 

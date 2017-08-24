@@ -17,9 +17,7 @@ class World
 		self.grid = grid
 	end
 
-# needs thorough testing
 	def list_closest_events(user_coords)
-		# searches grid for positions with events
 		event_data = []
 			get_all_events.each_pair do |location, event|
 				cheapest_ticket = get_cheapest_ticket(event.tickets)
